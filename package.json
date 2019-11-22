@@ -1,0 +1,13 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "compile": "lerna run compile",
+    "build": "lerna run build"
+  },
+  "devDependencies": {
+    "lerna": "^3.19.0",
+    "typescript": "^3.7.2"
+  }
+}

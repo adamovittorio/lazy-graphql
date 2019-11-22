@@ -1,0 +1,18 @@
+{
+  "name": "@lazy-graphql/graphql-gateway",
+  "version": "1.0.0",
+  "description": "Graphql Gateway",
+  "scripts": {
+    "build": "npm run clean && npm run compile",
+    "clean": "rm -rf ./dist && rm -rf tsconfig.tsbuildinfo",
+    "compile": "tsc -b tsconfig.json"
+  },
+  "dependencies": {
+    "@lazy-graphql/shared": "1.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.7.2"
+  },
+  "author": "Vittorio Adamo",
+  "license": "ISC"
+}
