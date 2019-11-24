@@ -1,16 +1,22 @@
 {
   "name": "@lazy-graphql/shared",
-  "version": "1.0.0",
-  "description": "Resusable modules and types shared accross the lazy-graphql services",
-  "main": "dist/index",
-  "types": "dist/index",
-  "files": [ "dist" ],
+  "version": "1.0.1",
+  "description": "Reusable modules and types shared accross the lazy-graphql services",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "watch": "tsc -w --incremental",
     "build": "npm run clean && npm run compile",
     "clean": "rm -rf ./dist && rm -rf tsconfig.tsbuildinfo",
-    "compile": "tsc -b tsconfig.json"
+    "compile": "tsc -b tsconfig.json",
+    "prepublish": "npm run build"
   },
   "devDependencies": {
+    "@types/node": "^12.12.12",
+    "nodemon": "^2.0.1",
     "typescript": "^3.7.2"
   },
   "author": "Vittorio Adamo",

@@ -4,4 +4,4 @@
 
 ## Development
 
-Install dependencies with `npm run bootstrap` and compile Typescript with `npm run compile`
+Install dependencies with `npm run bootstrap` and compile Typescript with `npm run compile`.

@@ -6,9 +6,12 @@
     "declaration": true,
     "noImplicitAny": true,
     "esModuleInterop": true,
+    "moduleResolution": "node",
     "module": "commonjs",
-    "target": "es6",
-    "lib": [ "es6" ]
+    "sourceMap": true,
+    "target": "es2018",
+    "lib": [ "es2018" ],
+    "resolveJsonModule": true
   },
   "exclude": [
     "node_modules",
