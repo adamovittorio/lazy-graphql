@@ -1,3 +1,5 @@
 import logger from "@lazy-graphql/shared";
 
-logger("🧟‍♀️  Graphql User Service started");
+logger(`${process.env.SECRET}`);
+
+logger("🧟‍♀️ Graphql User Service started");
