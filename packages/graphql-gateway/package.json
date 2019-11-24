@@ -6,6 +6,8 @@
     "start": "node ./dist",
     "watch": "tsc -w --incremental",
     "dev": "nodemon -r dotenv/config --watch ./dist --inspect=0.0.0.0:9229 --nolazy ./dist/index.js",
+    "prettier": "prettier --write 'src/**/*.{ts,json}'",
+    "lint": "tsc --noEmit && eslint 'src/**/*.ts' --quiet --fix",
     "docker-debug": "docker-compose up",
     "build": "npm run clean && npm run compile",
     "clean": "rm -rf ./dist && rm -rf tsconfig.tsbuildinfo",
@@ -16,8 +18,14 @@
   },
   "devDependencies": {
     "@types/node": "^12.12.12",
+    "@typescript-eslint/eslint-plugin": "^2.8.0",
+    "@typescript-eslint/parser": "^2.8.0",
     "dotenv": "^8.2.0",
+    "eslint": "^6.7.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.1",
     "nodemon": "^2.0.1",
+    "prettier": "1.19.1",
     "typescript": "^3.7.2"
   },
   "author": "Vittorio Adamo",

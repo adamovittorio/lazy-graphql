@@ -1,5 +1,5 @@
 import logger from "@lazy-graphql/shared";
 
-logger(`${process.env.SECRET}`)
+logger(`${process.env.SECRET}`);
 
 logger("⚡️ Graphql Gateway started");

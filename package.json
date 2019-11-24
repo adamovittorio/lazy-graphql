@@ -4,7 +4,10 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "compile": "lerna run compile",
-    "build": "lerna run build"
+    "clean": "lerna run clean",
+    "build": "lerna run build",
+    "prettier": "lerna run prettier",
+    "lint": "lerna run lint"
   },
   "devDependencies": {
     "lerna": "^3.19.0",
