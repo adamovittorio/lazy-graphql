@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  server:
+    build: .
+    container_name: graphql-gateway
+    volumes:
+      - .:/usr/src/service/
+      - /usr/src/service/node_modules/
+    environment:
+      - NODE_ENV=development
+    working_dir: /usr/src/service/
+    command: npm run dev
+    ports:
+      - "3000:3000"
+      - "9229:9229"
