@@ -3,7 +3,7 @@ version: '3'
 services:
   server:
     build: .
-    container_name: graphql-gateway
+    container_name: videogames
     volumes:
       - .:/usr/src/service/
       - /usr/src/service/node_modules/

@@ -7,57 +7,30 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Graphql Gateway",
+      "name": "Graphql Videogame Service",
       "runtimeExecutable": "nodemon",
-      "runtimeArgs": [ "--watch", "./dist" ],
-      "preLaunchTask": "Watch Graphql Gateway",
-      "program": "${workspaceFolder}/packages/graphql-gateway/dist/index.js",
-      "envFile": "${workspaceFolder}/packages/graphql-gateway/.env",
+      "runtimeArgs": ["--watch", "./dist"],
+      "preLaunchTask": "Watch Graphql Videogame Service",
+      "program": "${workspaceFolder}/services/videogames/dist/index.js",
+      "envFile": "${workspaceFolder}/services/videogames/.env",
       "restart": true,
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
-      "skipFiles": [
-        "<node_internals>/**"
-      ]
+      "skipFiles": ["<node_internals>/**"]
     },
     {
       "type": "node",
       "request": "launch",
       "name": "Graphql User Service",
       "runtimeExecutable": "nodemon",
-      "runtimeArgs": [ "--watch", "./dist" ],
+      "runtimeArgs": ["--watch", "./dist"],
       "preLaunchTask": "Watch Graphql User Service",
-      "program": "${workspaceFolder}/packages/graphql-user-service/dist/index.js",
-      "envFile": "${workspaceFolder}/packages/graphql-user-service/.env",
+      "program": "${workspaceFolder}/services/users/dist/index.js",
+      "envFile": "${workspaceFolder}/services/users/.env",
       "restart": true,
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
-      "skipFiles": [
-        "<node_internals>/**"
-      ]
-    },
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "Docker - Graphql Gateway",
-      "preLaunchTask": "Watch Graphql Gateway",
-      "cwd": "${workspaceFolder}/packages/graphql-gateway/",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": [ "run", "docker-debug"],
-      "port": 9229,
-      "address": "0.0.0.0",
-      "restart": true,
-      "timeout": 60000,
-      "localRoot": "${workspaceFolder}/packages/graphql-gateway/dist",
-      "remoteRoot": "/usr/src/service/dist",
-      "outFiles": [
-        "${workspaceFolder}/packages/graphql-gateway/dist/**/*.js"
-      ],
-      "skipFiles": [
-        "<node_internals>/**/*.js",
-      ],
-      "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen"
-    },
+      "skipFiles": ["<node_internals>/**"]
+    }
   ]
 }

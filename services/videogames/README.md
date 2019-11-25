@@ -1,4 +1,4 @@
-# Graphql Gateway
+# Graphql Videogame Service
 
 - [Development](#Development)
 
@@ -13,4 +13,4 @@ After **Lerna Bootstrap** in the root directory.
 
 - _Vscode_ development:
 
-  `Graphql Gateway` in the debug tasks.
+  `Graphql Videogame Service` in the debug tasks.

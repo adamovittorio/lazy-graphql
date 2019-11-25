@@ -1,14 +1,13 @@
 {
-  "name": "@lazy-graphql/graphql-gateway",
+  "name": "@lazy-graphql/users",
   "version": "1.0.0",
-  "description": "Graphql Gateway",
+  "description": "Graphql User Service",
   "scripts": {
     "start": "node ./dist",
     "watch": "tsc -w --incremental",
     "dev": "nodemon -r dotenv/config --watch ./dist --inspect=0.0.0.0:9229 --nolazy ./dist/index.js",
     "prettier": "prettier --write 'src/**/*.{ts,json}'",
     "lint": "tsc --noEmit && eslint 'src/**/*.ts' --quiet --fix",
-    "docker-debug": "docker-compose up",
     "build": "npm run clean && npm run compile",
     "clean": "rm -rf ./dist && rm -rf tsconfig.tsbuildinfo",
     "compile": "tsc -b tsconfig.json",
