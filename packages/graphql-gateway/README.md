@@ -1,16 +1,16 @@
 # Graphql Gateway
 
-* [Development](#Development)
+- [Development](#Development)
 
 ## Development
 
 After **Lerna Bootstrap** in the root directory.
 
-* *Standalone* development:
+- _Standalone_ development:
 
-  * Terminal 1 -> `npm run watch`
-  * Terminal 2 -> `npm run dev`
+  - Terminal 1 -> `npm run watch`
+  - Terminal 2 -> `npm run dev`
 
-* *Vscode* development:
+- _Vscode_ development:
 
-  `Graphql Gateway` in the debug tasks
+  `Graphql Gateway` in the debug tasks.
