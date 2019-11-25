@@ -27,9 +27,9 @@
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-prettier": "^3.1.1",
     "lint-staged": "^9.4.3",
-    "nodemon": "latest",
+    "nodemon": "^2.0.1",
     "prettier": "1.19.1",
-    "typescript": "latest"
+    "typescript": "^3.7.2"
   },
   "author": "Vittorio Adamo",
   "license": "ISC",

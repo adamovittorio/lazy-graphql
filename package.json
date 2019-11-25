@@ -13,9 +13,9 @@
     "start-services": "lerna run dev --parallel"
   },
   "devDependencies": {
-    "husky": "latest",
-    "lerna": "latest",
-    "typescript": "latest"
+    "husky": "^3.1.0",
+    "lerna": "^3.19.0",
+    "typescript": "^3.7.2"
   },
   "dependencies": {},
   "husky": {
