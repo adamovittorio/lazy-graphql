@@ -6,12 +6,19 @@
     "compile": "lerna run compile",
     "clean": "lerna run clean",
     "build": "lerna run build",
-    "prettier": "lerna run prettier",
-    "lint": "lerna run lint"
+    "prettier": "lerna run --concurrency 3 --stream prettier",
+    "lint": "lerna run --concurrency 1 --stream lint",
+    "pre-commit": "lerna run --concurrency 1 --stream precommit"
   },
   "devDependencies": {
+    "husky": "^3.1.0",
     "lerna": "^3.19.0",
     "typescript": "^3.7.2"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run pre-commit"
+    }
+  }
 }
