@@ -15,7 +15,7 @@
     "clean": "rm -rf ./dist && rm -rf tsconfig.tsbuildinfo",
     "compile": "tsc -b tsconfig.json",
     "prepublish": "npm run build",
-    "precommit": "tsc --noEmit && lint-staged"
+    "pre-commit": "tsc --noEmit && lint-staged"
   },
   "devDependencies": {
     "@types/node": "^12.12.12",
@@ -25,9 +25,8 @@
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-prettier": "^3.1.1",
     "lint-staged": "^9.4.3",
-    "nodemon": "^2.0.1",
     "prettier": "1.19.1",
-    "typescript": "^3.7.2"
+    "typescript": "latest"
   },
   "author": "Vittorio Adamo",
   "license": "ISC",
