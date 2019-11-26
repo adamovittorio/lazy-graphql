@@ -1,5 +1,6 @@
-import logger from "@lazy-graphql/shared";
+import { Server } from "@lazy-graphql/shared";
 
-logger(`${process.env.SECRET}`);
+const server = new Server(4000, "::");
 
-logger("⚡️ Graphql Gateway Service started");
+server.start();
+server.log.info("⚡️ Graphql Gateway Service started");

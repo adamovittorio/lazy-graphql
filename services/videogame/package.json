@@ -11,11 +11,11 @@
     "docker-debug": "docker-compose up",
     "postinstall": "npm run build",
     "lint": "tsc --noEmit && eslint 'src/**/*.ts' --quiet --fix",
-    "nodemon": "nodemon -r dotenv/config --watch ./dist --inspect=0.0.0.0:9227 --nolazy ./dist/index.js",
+    "nodemon": "nodemon --quiet -r dotenv/config --watch ./dist --inspect=0.0.0.0:9227 --nolazy ./dist/index.js",
     "pre-commit": "tsc --noEmit && lint-staged",
     "prettier": "prettier --write 'src/**/*.{ts,json}'",
     "start": "node ./dist",
-    "start:dev": "concurrently 'npm run watch' 'npm run nodemon'",
+    "start:dev": "concurrently --raw 'npm run watch' 'npm run nodemon'",
     "watch": "tsc -w --incremental"
   },
   "lint-staged": {
