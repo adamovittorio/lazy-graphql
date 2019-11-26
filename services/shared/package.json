@@ -2,20 +2,29 @@
   "name": "@lazy-graphql/shared",
   "version": "1.0.1",
   "description": "Reusable modules and types shared accross the lazy-graphql services",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "license": "ISC",
+  "author": "Vittorio Adamo",
   "files": [
     "dist"
   ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "watch": "tsc -w --incremental",
-    "prettier": "prettier --write 'src/**/*.{ts,json}'",
-    "lint": "tsc --noEmit && eslint 'src/**/*.ts' --quiet --fix",
     "build": "npm run clean && npm run compile",
     "clean": "rm -rf ./dist && rm -rf tsconfig.tsbuildinfo",
     "compile": "tsc -b tsconfig.json",
+    "lint": "tsc --noEmit && eslint 'src/**/*.ts' --quiet --fix",
+    "pre-commit": "tsc --noEmit && lint-staged",
+    "prettier": "prettier --write 'src/**/*.{ts,json}'",
     "prepublish": "npm run build",
-    "pre-commit": "tsc --noEmit && lint-staged"
+    "watch": "tsc -w --incremental"
+  },
+  "lint-staged": {
+    "**/*.ts": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
   },
   "devDependencies": {
     "@types/node": "^12.12.12",
@@ -28,14 +37,5 @@
     "lint-staged": "^9.4.3",
     "prettier": "1.19.1",
     "typescript": "^3.7.2"
-  },
-  "author": "Vittorio Adamo",
-  "license": "ISC",
-  "lint-staged": {
-    "**/*.ts": [
-      "prettier --write",
-      "eslint --fix",
-      "git add"
-    ]
   }
 }

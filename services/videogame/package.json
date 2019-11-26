@@ -2,19 +2,28 @@
   "name": "@lazy-graphql/videogame",
   "version": "1.0.0",
   "description": "Graphql Videogame Service",
+  "license": "ISC",
+  "author": "Vittorio Adamo",
   "scripts": {
-    "start": "node ./dist",
-    "watch": "tsc -w --incremental",
-    "start:dev": "concurrently 'npm run watch' 'npm run nodemon'",
-    "nodemon": "nodemon -r dotenv/config --watch ./dist --inspect=0.0.0.0:9227 --nolazy ./dist/index.js",
-    "prettier": "prettier --write 'src/**/*.{ts,json}'",
-    "lint": "tsc --noEmit && eslint 'src/**/*.ts' --quiet --fix",
-    "docker-debug": "docker-compose up",
     "build": "npm run clean && npm run compile",
     "clean": "rm -rf ./dist && rm -rf tsconfig.tsbuildinfo",
     "compile": "tsc -b tsconfig.json",
+    "docker-debug": "docker-compose up",
+    "postinstall": "npm run build",
+    "lint": "tsc --noEmit && eslint 'src/**/*.ts' --quiet --fix",
+    "nodemon": "nodemon -r dotenv/config --watch ./dist --inspect=0.0.0.0:9227 --nolazy ./dist/index.js",
     "pre-commit": "tsc --noEmit && lint-staged",
-    "postinstall": "npm run build"
+    "prettier": "prettier --write 'src/**/*.{ts,json}'",
+    "start": "node ./dist",
+    "start:dev": "concurrently 'npm run watch' 'npm run nodemon'",
+    "watch": "tsc -w --incremental"
+  },
+  "lint-staged": {
+    "**/*.ts": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
   },
   "dependencies": {
     "@lazy-graphql/shared": "1.0.1"
@@ -32,14 +41,5 @@
     "nodemon": "^2.0.1",
     "prettier": "1.19.1",
     "typescript": "^3.7.2"
-  },
-  "author": "Vittorio Adamo",
-  "license": "ISC",
-  "lint-staged": {
-    "**/*.ts": [
-      "prettier --write",
-      "eslint --fix",
-      "git add"
-    ]
   }
 }
