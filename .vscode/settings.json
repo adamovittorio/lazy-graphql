@@ -17,5 +17,5 @@
   "[typescript]": {
     "editor.formatOnSave": false
   },
-  "eslint.workingDirectories": ["services/videogames", "services/users", "services/shared"]
+  "eslint.workingDirectories": ["services/videogame", "services/user", "services/shared"]
 }

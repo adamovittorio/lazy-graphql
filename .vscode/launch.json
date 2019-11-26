@@ -3,7 +3,27 @@
   // Hover to view descriptions of existing attributes.
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
+  "compounds": [
+    {
+      "name": "Lazy Graphql",
+      "configurations": ["Graphql Gateway Service", "Graphql Videogame Service", "Graphql User Service"]
+    }
+  ],
   "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Graphql Gateway Service",
+      "runtimeExecutable": "nodemon",
+      "runtimeArgs": ["--watch", "./dist"],
+      "preLaunchTask": "Watch Graphql Gateway Service",
+      "program": "${workspaceFolder}/services/gateway/dist/index.js",
+      "envFile": "${workspaceFolder}/services/gateway/.env",
+      "restart": true,
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": ["<node_internals>/**"]
+    },
     {
       "type": "node",
       "request": "launch",
@@ -11,8 +31,8 @@
       "runtimeExecutable": "nodemon",
       "runtimeArgs": ["--watch", "./dist"],
       "preLaunchTask": "Watch Graphql Videogame Service",
-      "program": "${workspaceFolder}/services/videogames/dist/index.js",
-      "envFile": "${workspaceFolder}/services/videogames/.env",
+      "program": "${workspaceFolder}/services/videogame/dist/index.js",
+      "envFile": "${workspaceFolder}/services/videogame/.env",
       "restart": true,
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
@@ -25,8 +45,8 @@
       "runtimeExecutable": "nodemon",
       "runtimeArgs": ["--watch", "./dist"],
       "preLaunchTask": "Watch Graphql User Service",
-      "program": "${workspaceFolder}/services/users/dist/index.js",
-      "envFile": "${workspaceFolder}/services/users/.env",
+      "program": "${workspaceFolder}/services/user/dist/index.js",
+      "envFile": "${workspaceFolder}/services/user/.env",
       "restart": true,
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
