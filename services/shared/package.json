@@ -17,6 +17,7 @@
     "pre-commit": "tsc --noEmit && lint-staged",
     "prettier": "prettier --write 'src/**/*.{ts,json}'",
     "prepublish": "npm run build",
+    "start:dev": "npm run watch",
     "watch": "tsc -w --incremental"
   },
   "lint-staged": {

@@ -8,8 +8,7 @@ After **Lerna Bootstrap** in the root directory.
 
 - _Standalone_ development:
 
-  - Terminal 1 -> `npm run watch`
-  - Terminal 2 -> `npm run dev`
+  `npm run start:dev`
 
 - _Vscode_ development:
 
