@@ -1,6 +1,7 @@
 # Lazy Graphql
 
 - [Development](#Development)
+- [Architecture Overview](#ArchitectureOverview)
 
 ## Development
 
@@ -9,3 +10,7 @@
 3. Start services in development mode with `npm run start:services`.
 
 Have Fun! 🏄‍♂️
+
+## Architecture Overview
+
+![alt text](lazygraphql.png)
