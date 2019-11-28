@@ -26,18 +26,24 @@
     ]
   },
   "dependencies": {
-    "@lazy-graphql/shared": "1.0.1"
+    "@apollo/gateway": "^0.11.3",
+    "@lazy-graphql/shared": "1.0.1",
+    "apollo-server-fastify": "^2.9.12",
+    "fastify": "^2.10.0",
+    "graphql": "^14.5.8"
   },
   "devDependencies": {
-    "@types/node": "^12.12.12",
-    "@typescript-eslint/eslint-plugin": "^2.8.0",
-    "@typescript-eslint/parser": "^2.8.0",
+    "@types/graphql": "^14.5.0",
+    "@types/node": "^12.12.14",
+    "@types/node-fetch": "^2.5.4",
+    "@typescript-eslint/eslint-plugin": "^2.9.0",
+    "@typescript-eslint/parser": "^2.9.0",
     "concurrently": "^5.0.0",
     "dotenv": "^8.2.0",
-    "eslint": "^6.7.0",
+    "eslint": "^6.7.1",
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-prettier": "^3.1.1",
-    "lint-staged": "^9.4.3",
+    "lint-staged": "^9.5.0",
     "nodemon": "^2.0.1",
     "prettier": "1.19.1",
     "typescript": "^3.7.2"
