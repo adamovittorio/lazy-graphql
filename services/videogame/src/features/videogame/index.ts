@@ -12,14 +12,24 @@ export const videogameTypeDefs = gql`
     videogames: [Videogame]
   }
 
-  type Videogame {
+  type Videogame @key(fields: "id") {
     id: ID!
     title: String!
+  }
+
+  extend type Player @key(fields: "id") {
+    id: ID! @external
+    videogames: [Videogame]
   }
 `;
 
 export const videogameResolvers = {
   Query: {
+    videogames: () => {
+      return videogames;
+    },
+  },
+  Player: {
     videogames: () => {
       return videogames;
     },

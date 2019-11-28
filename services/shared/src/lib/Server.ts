@@ -13,7 +13,7 @@ export class Server {
   log: Logger;
 
   constructor(private port: number, private address: string, apolloServer?: MockApolloServer) {
-    this.fastifyIstance = fastify();
+    this.fastifyIstance = fastify({ logger: true });
 
     this.log = this.fastifyIstance.log;
 
