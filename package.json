@@ -10,7 +10,8 @@
     "lint": "lerna run --concurrency 1 --stream lint",
     "pre-commit": "lerna run --concurrency 1 --stream pre-commit",
     "prettier": "lerna run --concurrency 3 --stream prettier",
-    "start:services": "lerna run start:dev --parallel"
+    "start:services": "lerna run start:dev --parallel",
+    "start:gateway": "lerna run start:gateway --stream"
   },
   "husky": {
     "hooks": {

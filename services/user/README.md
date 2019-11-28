@@ -10,6 +10,6 @@ After **Lerna Bootstrap** in the root directory.
 
   `npm run start:dev`
 
-- _Vscode_ development:
+- _Vscode_ debugger:
 
   `Graphql User Service` in the debug tasks.

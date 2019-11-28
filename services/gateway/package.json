@@ -15,7 +15,7 @@
     "pre-commit": "tsc --noEmit && lint-staged",
     "prettier": "prettier --write 'src/**/*.{ts,json}'",
     "start": "node ./dist",
-    "start:dev": "concurrently --raw 'npm run watch' 'npm run nodemon'",
+    "start:gateway": "concurrently --raw 'npm run watch' 'npm run nodemon'",
     "watch": "tsc -w --incremental"
   },
   "lint-staged": {
