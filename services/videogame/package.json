@@ -11,7 +11,7 @@
     "docker-debug": "docker-compose up",
     "postinstall": "npm run build",
     "lint": "tsc --noEmit && eslint 'src/**/*.ts' --quiet --fix",
-    "nodemon": "nodemon --quiet -r dotenv/config --watch ./dist --inspect=0.0.0.0:9227 --nolazy ./dist/index.js",
+    "nodemon": "nodemon --quiet -r dotenv/config --watch ./dist --inspect=0.0.0.0:9227 --nolazy ./dist/index.js | pino-colada",
     "pre-commit": "tsc --noEmit && lint-staged",
     "prettier": "prettier --write 'src/**/*.{ts,json}'",
     "start": "node ./dist",
@@ -45,6 +45,7 @@
     "eslint-plugin-prettier": "^3.1.1",
     "lint-staged": "^9.5.0",
     "nodemon": "^2.0.1",
+    "pino-colada": "^1.5.0",
     "prettier": "1.19.1",
     "typescript": "^3.7.2"
   }
