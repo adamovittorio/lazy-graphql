@@ -17,5 +17,5 @@
   "[typescript]": {
     "editor.formatOnSave": false
   },
-  "eslint.workingDirectories": ["packages/graphql-gateway", "packages/graphql-user-service", "packages/shared"]
+  "eslint.workingDirectories": ["services/videogame", "services/user", "services/shared"]
 }

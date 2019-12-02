@@ -1,0 +1,52 @@
+{
+  "name": "@lazy-graphql/gateway",
+  "version": "1.0.0",
+  "description": "Graphql Gateway Service",
+  "license": "ISC",
+  "author": "Vittorio Adamo",
+  "scripts": {
+    "build": "npm run clean && npm run compile",
+    "clean": "rm -rf ./dist && rm -rf tsconfig.tsbuildinfo",
+    "compile": "tsc -b tsconfig.json",
+    "docker-debug": "docker-compose up",
+    "postinstall": "npm run build",
+    "lint": "tsc --noEmit && eslint 'src/**/*.ts' --quiet --fix",
+    "nodemon": "nodemon --quiet -r dotenv/config --watch ./dist --inspect=0.0.0.0:9229 --nolazy ./dist/index.js | pino-colada",
+    "pre-commit": "tsc --noEmit && lint-staged",
+    "prettier": "prettier --write 'src/**/*.{ts,json}'",
+    "start": "node ./dist",
+    "start:gateway": "concurrently --raw 'npm run watch' 'npm run nodemon'",
+    "watch": "tsc -w --incremental"
+  },
+  "lint-staged": {
+    "**/*.ts": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "@apollo/gateway": "^0.11.3",
+    "@lazy-graphql/shared": "1.0.1",
+    "apollo-server-fastify": "^2.9.12",
+    "fastify": "^2.10.0",
+    "graphql": "^14.5.8"
+  },
+  "devDependencies": {
+    "@types/graphql": "^14.5.0",
+    "@types/node": "^12.12.14",
+    "@types/node-fetch": "^2.5.4",
+    "@typescript-eslint/eslint-plugin": "^2.9.0",
+    "@typescript-eslint/parser": "^2.9.0",
+    "concurrently": "^5.0.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.7.1",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "lint-staged": "^9.5.0",
+    "nodemon": "^2.0.1",
+    "pino-colada": "^1.5.0",
+    "prettier": "1.19.1",
+    "typescript": "^3.7.2"
+  }
+}

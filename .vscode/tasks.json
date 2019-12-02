@@ -1,31 +1,55 @@
 {
-  // See https://go.microsoft.com/fwlink/?LinkId=733558 
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
   // for the documentation about the tasks.json format
   "version": "2.0.0",
   "tasks": [
     {
       "type": "npm",
       "script": "watch",
-      "label": "Watch Graphql Gateway",
-      "path": "packages/graphql-gateway/",
+      "label": "Watch Graphql Gateway Service",
+      "path": "services/gateway/",
       "group": "build",
       "isBackground": true,
       "problemMatcher": "$tsc-watch",
-      "presentation":{
-        "reveal": "always",
+      "presentation": {
+        "reveal": "always"
+      }
+    },
+    {
+      "type": "npm",
+      "script": "watch",
+      "label": "Watch Graphql Videogame Service",
+      "path": "services/videogame/",
+      "group": "build",
+      "isBackground": true,
+      "problemMatcher": "$tsc-watch",
+      "presentation": {
+        "reveal": "always"
       }
     },
     {
       "type": "npm",
       "script": "watch",
       "label": "Watch Graphql User Service",
-      "path": "packages/graphql-user-service/",
+      "path": "services/user/",
       "group": "build",
       "isBackground": true,
       "problemMatcher": "$tsc-watch",
-      "presentation":{
-        "reveal": "always",
+      "presentation": {
+        "reveal": "always"
       }
     },
+    {
+      "type": "npm",
+      "script": "watch",
+      "label": "Watch Shared",
+      "path": "services/shared/",
+      "group": "build",
+      "isBackground": true,
+      "problemMatcher": "$tsc-watch",
+      "presentation": {
+        "reveal": "always"
+      }
+    }
   ]
 }

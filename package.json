@@ -3,22 +3,25 @@
   "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "compile": "lerna run compile",
-    "clean": "lerna run clean",
     "build": "lerna run build",
-    "prettier": "lerna run --concurrency 3 --stream prettier",
+    "clean": "lerna run clean",
+    "compile": "lerna run compile",
+    "postinstall": "lerna bootstrap",
     "lint": "lerna run --concurrency 1 --stream lint",
-    "pre-commit": "lerna run --concurrency 1 --stream precommit"
+    "pre-commit": "lerna run --concurrency 1 --stream pre-commit",
+    "prettier": "lerna run --concurrency 3 --stream prettier",
+    "start:services": "lerna run start:dev --parallel",
+    "start:gateway": "lerna run start:gateway --stream"
   },
-  "devDependencies": {
-    "husky": "^3.1.0",
-    "lerna": "^3.19.0",
-    "typescript": "^3.7.2"
-  },
-  "dependencies": {},
   "husky": {
     "hooks": {
       "pre-commit": "npm run pre-commit"
     }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "husky": "^3.1.0",
+    "lerna": "^3.19.0",
+    "typescript": "^3.7.2"
   }
 }
