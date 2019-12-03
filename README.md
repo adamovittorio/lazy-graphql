@@ -14,7 +14,7 @@
 6. Attach debugger to all the services with `Lazy Graphql` in the debug tasks.
 7. Have Fun! 🏄‍♂️
 
-## Environments
+## Environment
 
 This project use environment variables to configure the behaviour of the services.
 For local development you can generate a valid `.env` for all the sub-projects by running `npm run generate:local-env`.
