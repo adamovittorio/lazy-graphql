@@ -1,4 +1,4 @@
-import { ConfigurationError } from "./Error";
+import { ConfigurationError } from "./error";
 
 export const getEnvOrThrow = (key: string): string => {
   const value = process.env[key] ?? undefined;

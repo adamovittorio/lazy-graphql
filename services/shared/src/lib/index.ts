@@ -1,2 +1,2 @@
-export * from "./Server";
-export * from "./Configuration";
+export * from "./server";
+export * from "./configuration";
