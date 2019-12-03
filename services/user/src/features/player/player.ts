@@ -1,5 +1,6 @@
-import { ObjectType, Field, ID } from "type-graphql";
+import { ObjectType, Field, ID, Directive } from "type-graphql";
 
+@Directive(`@key(fields: "id")`)
 @ObjectType()
 export default class Player {
   @Field(_type => ID)
