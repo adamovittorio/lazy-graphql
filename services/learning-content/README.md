@@ -1,4 +1,4 @@
-# Graphql Videogame Service
+# Graphql Learning Content Service
 
 - [Development](#Development)
 
@@ -12,4 +12,4 @@ After **Lerna Bootstrap** in the root directory.
 
 - _Vscode_ debugger:
 
-  `Graphql Videogame Service` in the debug tasks.
+  `Graphql Learning Content Service` in the debug tasks.

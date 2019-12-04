@@ -1,7 +1,7 @@
 {
-  "name": "@lazy-graphql/videogame",
+  "name": "@lazy-graphql/learning-content",
   "version": "1.0.0",
-  "description": "Graphql Videogame Service",
+  "description": "Graphql Learning Content Service",
   "license": "ISC",
   "author": "Vittorio Adamo",
   "scripts": {

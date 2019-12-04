@@ -8,4 +8,4 @@ const { SERVER_PORT, SERVER_ADDRESS } = Configuration;
 const server = new Server(SERVER_PORT, SERVER_ADDRESS, apolloServer);
 
 server.start();
-server.log.info("🕹 Graphql  Videogame Service started");
+server.log.info("📚 Graphql Learning Content Service started");
