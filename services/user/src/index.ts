@@ -5,16 +5,16 @@ import { Server } from "@lazy-graphql/shared";
 import { ApolloServer } from "apollo-server-fastify";
 
 import Configuration from "./lib/configuration";
-import PlayerResolver from "./features/player/resolver";
+import UserResolver from "./features/user/user.resolver";
 import { buildFederatedSchema } from "./lib/type-graphql-federation";
-import Player from "./features/player/player";
+import User from "./features/user/user.type";
 
 const { SERVER_PORT, SERVER_ADDRESS } = Configuration;
 
 async function bootstrap() {
   const schema = await buildFederatedSchema({
-    resolvers: [PlayerResolver],
-    orphanedTypes: [Player],
+    resolvers: [UserResolver],
+    orphanedTypes: [User],
     emitSchemaFile: path.resolve(__dirname, "../schema.graphql"),
   });
 
