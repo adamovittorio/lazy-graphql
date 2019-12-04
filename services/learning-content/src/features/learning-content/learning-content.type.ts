@@ -1,11 +1,24 @@
-import { ObjectType, Field, ID, Directive } from "type-graphql";
+import { ObjectType, Directive } from "type-graphql";
+import ILearningContent from "./learning-content.interface";
+import { SkillLevel, SupportedLanguage } from "./learning-content.enum";
 
 @Directive(`@key(fields: "id")`)
-@ObjectType()
-export default class LearningContent {
-  @Field(_type => ID)
+@ObjectType({
+  description: "A Unity learn content (eg. project, tutorial, courses...)",
+  implements: ILearningContent,
+})
+export class LearningContent implements ILearningContent {
   id: string;
-
-  @Field()
   title: string;
+  url: string;
+  summary: string;
+  image: string;
+  skillLevel: SkillLevel;
+  duration: number;
+  topics: string[];
+  industry: string;
+  recordCount: number;
+  isPremium: boolean;
+  authors: string[];
+  language: SupportedLanguage;
 }
