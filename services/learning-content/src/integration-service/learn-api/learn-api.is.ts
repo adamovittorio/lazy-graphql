@@ -1,21 +1,26 @@
 import fetch from "node-fetch";
 import { Service } from "typedi";
 import { LearningContentArgs } from "../../features/learning-content/schema/learning-content.args";
+import { LearnAPIResponse } from "./learning-api.types";
 
 @Service()
 class LearnAPI {
   // TODO: extend RESTConnector in shared
   baseURL: string;
   constructor() {
+    // TODO: Configuration
     this.baseURL = "https://connect.unity.com/api/learn";
   }
 
-  async getLearningContent(learningContentArgs: LearningContentArgs) {
+  async getLearningContent(args: LearningContentArgs): Promise<LearnAPIResponse> {
     let response;
+    const path = this.buildLearningContentEndpoint(args);
     try {
-      response = await fetch(this.baseURL + this.buildLearningContentEndpoint(learningContentArgs)).then(res =>
-        res.json()
-      );
+      response = await fetch(this.baseURL + path).then(res => {
+        if (res.ok) {
+          return res.json();
+        }
+      });
     } catch (e) {
       // TODO: LearnApi Error
       throw e;
@@ -24,7 +29,7 @@ class LearnAPI {
   }
 
   private buildLearningContentFilter({ contentType, skillLevel, languages }: LearningContentArgs): string {
-    return JSON.stringify([`t:${contentType}`, `sl:${skillLevel}`, languages.map(lang => `lang:${lang}`).flat()]);
+    return JSON.stringify([`t:${contentType}`, `sl:${skillLevel}`, languages.map(lang => `lang:${lang}`).join()]);
   }
 
   private buildLearningContentEndpoint(learningContentArgs: LearningContentArgs): string {

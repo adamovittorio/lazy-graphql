@@ -1,5 +1,5 @@
 import { Field, ID, Int, InterfaceType } from "type-graphql";
-import { SkillLevel, SupportedLanguage } from "./learning-content.enum";
+import { SkillLevel } from "./learning-content.enum";
 
 @InterfaceType()
 export default abstract class ILearningContent {
@@ -39,6 +39,6 @@ export default abstract class ILearningContent {
   @Field(() => [String])
   authors: string[];
 
-  @Field(() => SupportedLanguage)
-  language: SupportedLanguage;
+  @Field()
+  language: string;
 }

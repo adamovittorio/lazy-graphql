@@ -28,7 +28,7 @@ interface ILearningContent {
   image: String!
   industry: String!
   isPremium: Boolean!
-  language: SupportedLanguage!
+  language: String!
   recordCount: Int!
   skillLevel: SkillLevel!
   summary: String!
@@ -45,7 +45,7 @@ type LearningContent implements ILearningContent {
   image: String!
   industry: String!
   isPremium: Boolean!
-  language: SupportedLanguage!
+  language: String!
   recordCount: Int!
   skillLevel: SkillLevel!
   summary: String!
@@ -73,7 +73,7 @@ type Query {
 
     """Skip the first n resources"""
     skip: Int = 0
-  ): LearningContent!
+  ): [LearningContent!]!
 }
 
 """The available skill levels"""

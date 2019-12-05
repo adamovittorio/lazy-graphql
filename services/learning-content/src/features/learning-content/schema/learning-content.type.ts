@@ -1,6 +1,6 @@
 import { ObjectType, Directive } from "type-graphql";
 import ILearningContent from "./learning-content.interface";
-import { SkillLevel, SupportedLanguage } from "./learning-content.enum";
+import { SkillLevel } from "./learning-content.enum";
 
 @Directive(`@key(fields: "id")`)
 @ObjectType({
@@ -20,5 +20,5 @@ export class LearningContent implements ILearningContent {
   recordCount: number;
   isPremium: boolean;
   authors: string[];
-  language: SupportedLanguage;
+  language: string;
 }
