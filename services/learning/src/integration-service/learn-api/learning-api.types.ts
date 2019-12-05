@@ -18,7 +18,7 @@ export interface LearnAPIAsset {
   packageId: string;
 }
 
-export interface LearAPIStat {
+export interface LearnAPIStat {
   collectCount: number;
   commentCount: number;
   createdTime: string;
@@ -29,11 +29,11 @@ export interface LearAPIStat {
   viewCount: number;
 }
 
-export interface LearAPIStatMap {
-  [id: string]: LearAPIStat;
+export interface LearnAPIStatMap {
+  [id: string]: LearnAPIStat;
 }
 
-export interface LearAPIUserStat {
+export interface LearnAPIUserStat {
   avatar: string;
   favoriteCount: number;
   followCount: number;
@@ -47,8 +47,8 @@ export interface LearAPIUserStat {
   username: string;
 }
 
-export interface LearAPIUserStatMap {
-  [id: string]: LearAPIUserStat;
+export interface LearnAPIUserStatMap {
+  [id: string]: LearnAPIUserStat;
 }
 
 export interface LearnAPIBaseContent {
@@ -72,8 +72,8 @@ export interface LearnAPIBaseContent {
   ownerId: string;
   thumbnail: LearnAPIThumbnail;
   premium: boolean;
-  statsMap: LearAPIStatMap;
-  userMap: LearAPIUserStatMap;
+  statsMap: LearnAPIStatMap;
+  userMap: LearnAPIUserStatMap;
 }
 
 export interface LearnAPIProject extends LearnAPIBaseContent {

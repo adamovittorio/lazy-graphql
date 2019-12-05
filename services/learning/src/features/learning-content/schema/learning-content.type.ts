@@ -7,7 +7,7 @@ import { SkillLevel } from "./learning-content.enum";
   description: "A Unity learn content (eg. project, tutorial, courses...)",
   implements: ILearningContent,
 })
-export class LearningContent implements ILearningContent {
+export default class LearningContent implements ILearningContent {
   id: string;
   title: string;
   url: string;

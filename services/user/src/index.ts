@@ -5,9 +5,9 @@ import { Server } from "@lazy-graphql/shared";
 import { ApolloServer } from "apollo-server-fastify";
 
 import Configuration from "./lib/configuration";
-import UserResolver from "./features/user/user.resolver";
+import UserResolver from "./features/user/schema/user.resolver";
 import { buildFederatedSchema } from "./lib/type-graphql-federation";
-import User from "./features/user/user.type";
+import User from "./features/user/schema/user.type";
 
 const { SERVER_PORT, SERVER_ADDRESS } = Configuration;
 

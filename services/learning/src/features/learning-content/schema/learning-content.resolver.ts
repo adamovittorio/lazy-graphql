@@ -1,15 +1,15 @@
 import { Service } from "typedi";
 import { Query, Resolver, Args } from "type-graphql";
-import { LearningContent } from "./learning-content.type";
+import LearningContent from "./learning-content.type";
 import { LearningContentArgs } from "./learning-content.args";
-import { LearningContentService } from "../service/learning-content";
+import { LearningService } from "../service/learning";
 
 @Service()
 @Resolver(() => LearningContent)
 export default class LearningContentResolver {
-  constructor(private learningContentService: LearningContentService) {}
+  constructor(private learningService: LearningService) {}
   @Query(() => [LearningContent])
   async learningContents(@Args() args: LearningContentArgs): Promise<LearningContent[]> {
-    return this.learningContentService.getLearningContent(args);
+    return this.learningService.getLearningContents(args);
   }
 }

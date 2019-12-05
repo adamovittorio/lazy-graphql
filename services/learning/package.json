@@ -1,7 +1,7 @@
 {
-  "name": "@lazy-graphql/learning-content",
+  "name": "@lazy-graphql/learning",
   "version": "1.0.0",
-  "description": "Graphql Learning Content Service",
+  "description": "Graphql Learning Service",
   "license": "ISC",
   "author": "Vittorio Adamo",
   "scripts": {

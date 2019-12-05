@@ -1,5 +1,5 @@
-import { ArgsType, Field, Int } from "type-graphql";
 import { Min, Max } from "class-validator";
+import { ArgsType, Field, Int } from "type-graphql";
 import { ContentType, SupportedLanguage, SkillLevel } from "./learning-content.enum";
 
 // TODO: extract reusable args in a common interface in shared

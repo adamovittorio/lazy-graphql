@@ -1,12 +1,12 @@
 import { Service } from "typedi";
-import { LearningContent } from "../../features/learning-content/schema/learning-content.type";
 import { LearnAPIResponse, LearnAPIContent } from "./learning-api.types";
+import LearningContent from "../../features/learning-content/schema/learning-content.type";
 import { SkillLevel } from "../../features/learning-content/schema/learning-content.enum";
 
 @Service()
 export default class LearnAPIMapper {
   static unityUrl: "https://learn.unity.com";
-  mapLearnAPIResponseToLearnContent({ results }: LearnAPIResponse): LearningContent[] {
+  mapLearnAPIResponseToLearnContents({ results }: LearnAPIResponse): LearningContent[] {
     return results.map(this.mapResult);
   }
 

@@ -17,10 +17,6 @@
   "[typescript]": {
     "editor.formatOnSave": false
   },
-  "eslint.workingDirectories": [
-    "services/learning-content",
-    "services/user",
-    "services/shared"
-  ],
+  "eslint.workingDirectories": ["services/learning", "services/user", "services/shared"],
   "editor.formatOnPaste": true
 }

@@ -12,7 +12,7 @@ class LearnAPI {
     this.baseURL = "https://connect.unity.com/api/learn";
   }
 
-  async getLearningContent(args: LearningContentArgs): Promise<LearnAPIResponse> {
+  async getLearningContents(args: LearningContentArgs): Promise<LearnAPIResponse> {
     let response;
     const path = this.buildLearningContentEndpoint(args);
     try {
