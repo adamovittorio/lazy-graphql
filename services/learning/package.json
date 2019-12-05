@@ -1,7 +1,7 @@
 {
-  "name": "@lazy-graphql/videogame",
+  "name": "@lazy-graphql/learning",
   "version": "1.0.0",
-  "description": "Graphql Videogame Service",
+  "description": "Graphql Learning Service",
   "license": "ISC",
   "author": "Vittorio Adamo",
   "scripts": {
@@ -29,8 +29,13 @@
     "@apollo/federation": "^0.11.2",
     "@lazy-graphql/shared": "1.0.1",
     "apollo-server-fastify": "^2.9.12",
+    "class-validator": "^0.11.0",
     "fastify": "^2.10.0",
-    "graphql": "^14.5.8"
+    "graphql": "^14.5.8",
+    "node-fetch": "^2.6.0",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "beta",
+    "typedi": "^0.8.0"
   },
   "devDependencies": {
     "@types/graphql": "^14.5.0",

@@ -2,14 +2,14 @@ import { ApolloGateway } from "@apollo/gateway";
 import { ApolloServer } from "apollo-server-fastify";
 
 import { Server } from "@lazy-graphql/shared";
-import Configuration from "./lib/Configuration";
+import Configuration from "./lib/configuration";
 
-const { SERVER_PORT, SERVER_ADDRESS, USER_SERVICE_URL, VIDEOGAME_SERVICE_URL } = Configuration;
+const { SERVER_PORT, SERVER_ADDRESS, USER_SERVICE_URL, LEARNING_SERVICE_URL } = Configuration;
 
 const gateway = new ApolloGateway({
   serviceList: [
     { name: "user", url: USER_SERVICE_URL },
-    { name: "videogame", url: VIDEOGAME_SERVICE_URL },
+    { name: "learning", url: LEARNING_SERVICE_URL },
   ],
 });
 

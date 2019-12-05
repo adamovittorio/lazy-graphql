@@ -18,8 +18,8 @@
     {
       "type": "npm",
       "script": "watch",
-      "label": "Watch Graphql Videogame Service",
-      "path": "services/videogame/",
+      "label": "Watch Graphql Learning Service",
+      "path": "services/learning/",
       "group": "build",
       "isBackground": true,
       "problemMatcher": "$tsc-watch",
