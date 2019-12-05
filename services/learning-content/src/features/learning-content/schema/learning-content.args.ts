@@ -20,8 +20,8 @@ export class LearningContentArgs {
   @Field(() => ContentType, { description: "Learn API native filter" })
   contentType: ContentType;
 
-  @Field(() => SupportedLanguage, { description: "Learn API language filter" })
-  language: SupportedLanguage;
+  @Field(() => [SupportedLanguage], { description: "Learn API language filter" })
+  languages: SupportedLanguage[];
 
   @Field(() => SkillLevel, { description: "Learn API skill level filter" })
   skillLevel: SkillLevel;

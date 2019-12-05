@@ -1,10 +1,15 @@
+import { Service } from "typedi";
 import { Query, Resolver, Args } from "type-graphql";
 import { LearningContent } from "./learning-content.type";
 import { SkillLevel, SupportedLanguage } from "./learning-content.enum";
 import { LearningContentArgs } from "./learning-content.args";
+import { LearningContentService } from "../service/learning-content";
 
-@Resolver(_of => LearningContent)
+@Service()
+@Resolver(() => LearningContent)
 export default class LearningContentResolver {
+  constructor(private learningContentService: LearningContentService) {}
+
   data = [
     {
       id: "id",
@@ -23,9 +28,9 @@ export default class LearningContentResolver {
     },
   ];
 
-  @Query(_returns => LearningContent)
-  async learningContents(@Args() { skip, limit }: LearningContentArgs): Promise<LearningContent[]> {
-    console.log(skip, limit);
+  @Query(() => LearningContent)
+  async learningContents(@Args() learningContentArgs: LearningContentArgs): Promise<LearningContent[]> {
+    const response = await this.learningContentService.getLearningContent(learningContentArgs);
     return this.data;
   }
 }

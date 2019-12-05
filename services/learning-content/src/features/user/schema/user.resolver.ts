@@ -1,14 +1,13 @@
 import { FieldResolver, Resolver, Args } from "type-graphql";
 import User from "./user.type";
-import { LearningContent } from "../learning-content/learning-content.type";
-import { SkillLevel, SupportedLanguage } from "../learning-content/learning-content.enum";
-import { LearningContentArgs } from "../learning-content/learning-content.args";
+import { LearningContent } from "../../learning-content/schema/learning-content.type";
+import { SkillLevel, SupportedLanguage } from "../../learning-content/schema/learning-content.enum";
+import { LearningContentArgs } from "../../learning-content/schema/learning-content.args";
 
 @Resolver(_of => User)
 export default class UserResolver {
   @FieldResolver(() => [LearningContent])
-  async learningContents(@Args() { skip, limit }: LearningContentArgs): Promise<LearningContent[]> {
-    console.log(skip, limit);
+  async learningContents(@Args() _learningContentArgs: LearningContentArgs): Promise<LearningContent[]> {
     return [
       {
         id: "id",
