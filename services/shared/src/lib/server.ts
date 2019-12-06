@@ -12,8 +12,8 @@ export class Server {
   fastifyIstance: FastifyInstance;
   log: Logger;
 
-  constructor(private port: number, private address: string, apolloServer?: MockApolloServer) {
-    this.fastifyIstance = fastify({ logger: true });
+  constructor(private port: number, private address: string, logger: Logger, apolloServer?: MockApolloServer) {
+    this.fastifyIstance = fastify({ logger, disableRequestLogging: true });
 
     this.log = this.fastifyIstance.log;
 
@@ -33,7 +33,7 @@ export class Server {
     try {
       await this.fastifyIstance.listen(this.port, this.address);
     } catch (err) {
-      this.fastifyIstance.log.error(err);
+      this.fastifyIstance.log.fatal(err);
       process.exit(1);
     }
   }
