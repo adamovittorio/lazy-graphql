@@ -6,7 +6,7 @@ import { SkillLevel } from "../../features/learning-content/schema/learning-cont
 @Service()
 export default class LearnAPIMapper {
   static unityUrl: "https://learn.unity.com";
-  mapLearnAPIResponseToLearnContents({ results }: LearnAPIResponse): LearningContent[] {
+  mapLearnAPIResponseToLearnContents({ results = [] }: LearnAPIResponse): LearningContent[] {
     return results.map(this.mapResult);
   }
 

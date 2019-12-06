@@ -5,7 +5,7 @@ import { Server } from "@lazy-graphql/shared";
 
 import { ApolloServer } from "apollo-server-fastify";
 
-import logger from "./lib/logger";
+import loggerFactory from "./lib/logger";
 import Configuration from "./lib/configuration";
 import { buildFederatedSchema } from "./lib/type-graphql-federation";
 import LearningContentResolver from "./features/learning-content/schema/learning-content.resolver";
@@ -26,7 +26,7 @@ async function bootstrap() {
     schema,
   });
 
-  const server = new Server(SERVER_PORT, SERVER_ADDRESS, logger, apolloServer);
+  const server = new Server(SERVER_PORT, SERVER_ADDRESS, loggerFactory, apolloServer);
 
   await server.start();
 }
