@@ -6,17 +6,20 @@ const gatewayEnvironmentVariables =
 SERVER_ADDRESS=::
 USER_SERVICE_URL=http://localhost:4002/graphql
 LEARNING_SERVICE_URL=http://localhost:4001/graphql
+LOG_LEVEL=debug
 `;
 
 const userEnvironmentVariables =
 `SERVER_PORT=4002
 SERVER_ADDRESS=::
+LOG_LEVEL=debug
 `;
 
 
 const learningEnvironmentVariables =
 `SERVER_PORT=4001
 SERVER_ADDRESS=::
+LOG_LEVEL=debug
 `;
 
 function generateEnvironments(serviceEnvPath: string, envData: string) {

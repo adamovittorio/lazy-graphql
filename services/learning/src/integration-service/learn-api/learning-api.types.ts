@@ -93,5 +93,5 @@ export interface LearnAPIResponse {
   total: number;
   page: string;
   pageSize: string;
-  results: LearnAPIContent[];
+  results?: LearnAPIContent[];
 }

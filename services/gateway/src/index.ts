@@ -2,6 +2,7 @@ import { ApolloGateway } from "@apollo/gateway";
 import { ApolloServer } from "apollo-server-fastify";
 
 import { Server } from "@lazy-graphql/shared";
+import logger from "./lib/logger";
 import Configuration from "./lib/configuration";
 
 const { SERVER_PORT, SERVER_ADDRESS, USER_SERVICE_URL, LEARNING_SERVICE_URL } = Configuration;
@@ -18,7 +19,6 @@ const apolloServer = new ApolloServer({
   subscriptions: false,
 });
 
-const server = new Server(SERVER_PORT, SERVER_ADDRESS, apolloServer);
+const server = new Server(SERVER_PORT, SERVER_ADDRESS, logger, apolloServer);
 
 server.start();
-server.log.info("⚡️ Graphql Gateway Service started");

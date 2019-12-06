@@ -5,6 +5,7 @@ export interface Configuration {
   SERVER_ADDRESS: string;
   USER_SERVICE_URL: string;
   LEARNING_SERVICE_URL: string;
+  LOG_LEVEL: string;
 }
 
 const serviceConfiguration: Configuration = {
@@ -12,6 +13,7 @@ const serviceConfiguration: Configuration = {
   SERVER_ADDRESS: getEnvOrThrow("SERVER_ADDRESS"),
   USER_SERVICE_URL: getEnvOrThrow("USER_SERVICE_URL"),
   LEARNING_SERVICE_URL: getEnvOrThrow("LEARNING_SERVICE_URL"),
+  LOG_LEVEL: getEnvOrThrow("LOG_LEVEL"),
 };
 
 export default createConfiguration<Configuration>(serviceConfiguration);
