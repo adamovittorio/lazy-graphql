@@ -46,6 +46,7 @@
     "fastify-compress": "^1.1.0",
     "fastify-cors": "^3.0.0",
     "fastify-helmet": "^3.0.2",
+    "got": "^10.0.3",
     "pino": "^5.14.0"
   }
 }
