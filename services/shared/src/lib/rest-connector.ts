@@ -3,7 +3,6 @@ import { Logger } from "pino";
 import { HttpError } from "./error";
 
 export type RESTBody = Pick<GotOptions, "json">;
-export type RESTContenxt = Pick<GotOptions, "context">;
 
 export type Options = GotOptions;
 
@@ -43,36 +42,44 @@ export class RESTConnector {
       hooks: {
         beforeRequest: [
           options => {
-            options.headers = options?.context?.headers ?? {};
+            options.headers = {
+              ...(options?.headers ?? {}),
+              ...(options?.context?.headers ?? {}),
+            };
+            console.log(options.context);
           },
         ],
       },
       handlers: [responseHandler],
       ...options,
+      headers: {
+        "user-agent": "@lazy-graphql",
+        ...(options?.headers ?? {}),
+      },
     });
   }
 
-  async get<T>(endpoint: string, context?: RESTContenxt): Promise<Response<T>> {
+  async get<T>(endpoint: string, context?: Options["context"]): Promise<Response<T>> {
     return this.client.get<T>(endpoint, { context });
   }
 
-  async post<T>(endpoint: string, body: RESTBody, context?: RESTContenxt): Promise<Response<T>> {
+  async post<T>(endpoint: string, body: RESTBody, context?: Options["context"]): Promise<Response<T>> {
     return this.client.post(endpoint, { json: body, context });
   }
 
-  async put<T>(endpoint: string, body: RESTBody, context?: RESTContenxt): Promise<Response<T>> {
+  async put<T>(endpoint: string, body: RESTBody, context?: Options["context"]): Promise<Response<T>> {
     return this.client.put(endpoint, { json: body, context });
   }
 
-  async patch<T>(endpoint: string, body: RESTBody, context?: RESTContenxt): Promise<Response<T>> {
+  async patch<T>(endpoint: string, body: RESTBody, context?: Options["context"]): Promise<Response<T>> {
     return this.client.patch(endpoint, { json: body, context });
   }
 
-  async head<T>(endpoint: string, context?: RESTContenxt): Promise<Response<T>> {
+  async head<T>(endpoint: string, context?: Options["context"]): Promise<Response<T>> {
     return this.client.head(endpoint, { context });
   }
 
-  async delete<T>(endpoint: string, context?: RESTContenxt): Promise<Response<T>> {
+  async delete<T>(endpoint: string, context?: Options["context"]): Promise<Response<T>> {
     return this.client.delete(endpoint, { context });
   }
 }
