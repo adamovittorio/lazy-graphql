@@ -1,10 +1,20 @@
 import got, { Got, GotOptions, Response, HandlerFunction } from "got";
+import HttpAgent, * as AgentKeepAlive from "agentkeepalive";
+const { HttpsAgent } = AgentKeepAlive;
 import { Logger } from "pino";
+
 import { HttpError } from "./error";
 
 export type RESTBody = Pick<GotOptions, "json">;
 
 export type Options = GotOptions;
+
+const keepaliveOpts = {
+  maxSockets: 100,
+  maxFreeSockets: 10,
+  timeout: 60000,
+  freeSocketTimeout: 30000,
+};
 
 // TODO: redis
 const cache = new Map();
@@ -39,6 +49,10 @@ export class RESTConnector {
       cache: cache,
       dnsCache: cache,
       responseType: "json",
+      agent: {
+        http: new HttpAgent(keepaliveOpts),
+        https: new HttpsAgent(keepaliveOpts),
+      },
       hooks: {
         beforeRequest: [
           options => {
@@ -46,7 +60,6 @@ export class RESTConnector {
               ...(options?.headers ?? {}),
               ...(options?.context?.headers ?? {}),
             };
-            console.log(options.context);
           },
         ],
       },
