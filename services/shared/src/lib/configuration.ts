@@ -33,7 +33,7 @@ export const getNumberFromEnv = (key: string): number => {
 export const createConfiguration = <T extends object>(configuration: T): T => {
   return new Proxy(configuration, {
     set: function(_object, property) {
-      throw new Error(`configuration.${String(property)} cannot be mutate!`);
+      throw new ConfigurationError(`configuration.${String(property)} cannot be mutate!`);
     },
   });
 };
