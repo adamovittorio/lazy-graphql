@@ -1,6 +1,7 @@
 import { Service } from "typedi";
 import { LearningContentArgs } from "../../features/learning-content/schema/learning-content.args";
 import { LearnAPIResponse } from "./learning-api.types";
+import { LearnAPIError, LearnAPIErrorCodes } from "./learn-api.errors";
 import loggerFactory from "../../lib/logger";
 import { RESTConnector } from "@lazy-graphql/shared";
 import Configuration from "../../lib/configuration";
@@ -18,10 +19,11 @@ class LearnAPI extends RESTConnector {
     const endpoint = this.buildLearningContentEndpoint(args);
     try {
       const { body } = await this.get<LearnAPIResponse>(endpoint, { headers: { x: "foo" } });
+      throw "bad";
       response = body;
     } catch (e) {
-      this.logger.error(e, "getLearningContents");
-      throw e;
+      this.logger.error(e, LearnAPIErrorCodes.GET_LEARNING_CONTENT);
+      throw new LearnAPIError(e, LearnAPIErrorCodes.GET_LEARNING_CONTENT);
     }
     return response;
   }
