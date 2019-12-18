@@ -1,3 +1,17 @@
+import { Logger } from "./logger";
+export class ErrorHandler {
+  constructor(private logger: Logger) {}
+  public async handleError(e: Partial<AppError>): Promise<void> {
+    this.logger.error(e);
+    // here we can send allerts
+    this.determineIfOperationalError(e);
+  }
+
+  determineIfOperationalError(e: Partial<AppError>) {
+    return e.isOperational;
+  }
+}
+
 export class AppError extends Error {
   public readonly name: string;
   public readonly code: string;

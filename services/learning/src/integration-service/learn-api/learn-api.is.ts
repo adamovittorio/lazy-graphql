@@ -19,10 +19,8 @@ class LearnAPI extends RESTConnector {
     const endpoint = this.buildLearningContentEndpoint(args);
     try {
       const { body } = await this.get<LearnAPIResponse>(endpoint, { headers: { x: "foo" } });
-      throw "bad";
       response = body;
     } catch (e) {
-      this.logger.error(e, LearnAPIErrorCodes.GET_LEARNING_CONTENT);
       throw new LearnAPIError(e, LearnAPIErrorCodes.GET_LEARNING_CONTENT);
     }
     return response;
