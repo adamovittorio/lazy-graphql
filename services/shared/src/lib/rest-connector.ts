@@ -3,7 +3,7 @@ import HttpAgent, * as AgentKeepAlive from "agentkeepalive";
 const { HttpsAgent } = AgentKeepAlive;
 import { Logger } from "pino";
 
-import { HttpError } from "./error";
+import { HTTPError } from "./error";
 
 export type RESTBody = Pick<GotOptions, "json">;
 
@@ -38,7 +38,7 @@ export class RESTConnector {
           this.logger.trace({ ...response.timings }, `${response.url} result ${response.statusCode}`);
           return response;
         } catch (error) {
-          throw new HttpError(error);
+          throw new HTTPError(error, error?.response?.statusCode);
         }
       })();
     };

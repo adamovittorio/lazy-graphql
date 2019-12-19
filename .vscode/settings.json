@@ -1,15 +1,4 @@
 {
-  "eslint.autoFixOnSave": true,
-  "eslint.validate": [
-    {
-      "language": "javascript",
-      "autoFix": true
-    },
-    {
-      "language": "typescript",
-      "autoFix": true
-    }
-  ],
   "editor.formatOnSave": true,
   "[javascript]": {
     "editor.formatOnSave": false
@@ -18,5 +7,8 @@
     "editor.formatOnSave": false
   },
   "eslint.workingDirectories": ["services/learning", "services/user", "services/shared"],
-  "editor.formatOnPaste": true
+  "editor.formatOnPaste": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }

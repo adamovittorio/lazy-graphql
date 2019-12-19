@@ -1,6 +1,6 @@
 import "reflect-metadata";
 import path from "path";
-import { Server } from "@lazy-graphql/shared";
+import { Server, ErrorHandler } from "@lazy-graphql/shared";
 
 import { ApolloServer } from "apollo-server-fastify";
 
@@ -11,6 +11,7 @@ import { buildFederatedSchema } from "./lib/type-graphql-federation";
 import User from "./features/user/schema/user.type";
 
 const { SERVER_PORT, SERVER_ADDRESS } = Configuration;
+const errorHandler = new ErrorHandler(logger);
 
 async function bootstrap() {
   const schema = await buildFederatedSchema({
@@ -21,6 +22,10 @@ async function bootstrap() {
 
   const apolloServer = new ApolloServer({
     schema,
+    formatError: err => {
+      errorHandler.handleError(err);
+      return err;
+    },
   });
 
   const server = new Server(SERVER_PORT, SERVER_ADDRESS, logger, apolloServer);
