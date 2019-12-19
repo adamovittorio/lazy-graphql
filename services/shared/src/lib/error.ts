@@ -1,13 +1,28 @@
 import { Logger } from "./logger";
 export class ErrorHandler {
-  constructor(private logger: Logger) {}
-  public async handleError(e: Partial<AppError>): Promise<void> {
-    this.logger.error(e);
-    // here we can send allerts
-    this.determineIfOperationalError(e);
+  constructor(private logger: Logger) {
+    process.on("unhandledRejection", (reason: string) => {
+      // I just caught an unhandled promise rejection,
+      // since we already have fallback handler for unhandled errors (see below),
+      // let throw and let him handle that
+      throw reason;
+    });
+
+    process.on("uncaughtException", (error: Error) => {
+      this.handleError(error);
+      if (!this.isOperational(error)) {
+        process.exit(1);
+      }
+    });
   }
 
-  determineIfOperationalError(e: Partial<AppError>) {
+  // Every AppError should pass here
+  public async handleError(e: Partial<AppError>): Promise<void> {
+    this.logger.error(e);
+    // here we can send alerts, redact errors and more
+  }
+
+  isOperational(e: Partial<AppError>) {
     return e.isOperational;
   }
 }
