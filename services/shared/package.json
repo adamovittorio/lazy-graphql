@@ -18,10 +18,13 @@
     "prettier": "prettier --write 'src/**/*.{ts,json}'",
     "prepublish": "npm run build",
     "start:dev": "npm run watch",
-    "watch": "tsc -w --incremental"
+    "watch": "tsc -w --incremental",
+    "test:watch": "jest --watch",
+    "test": "jest"
   },
   "lint-staged": {
     "**/*.ts": [
+      "npm run test",
       "prettier --write",
       "eslint --fix",
       "git add"
@@ -29,6 +32,7 @@
   },
   "devDependencies": {
     "@types/cors": "^2.8.6",
+    "@types/jest": "^24.0.24",
     "@types/node": "^12.12.12",
     "@types/pino": "^5.14.0",
     "@typescript-eslint/eslint-plugin": "^2.8.0",
@@ -36,9 +40,11 @@
     "eslint": "^6.7.0",
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-prettier": "^3.1.1",
+    "jest": "^24.9.0",
     "lint-staged": "^9.4.3",
     "pino-colada": "^1.5.0",
     "prettier": "1.19.1",
+    "ts-jest": "^24.2.0",
     "typescript": "^3.7.2"
   },
   "dependencies": {

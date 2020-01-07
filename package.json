@@ -12,7 +12,8 @@
     "prettier": "lerna run --concurrency 3 --stream prettier",
     "start:services": "lerna run start:dev --parallel",
     "start:gateway": "lerna run start:gateway --stream",
-    "generate:local-env": "npx ts-node scripts/generate-env.ts"
+    "generate:local-env": "npx ts-node scripts/generate-env.ts",
+    "test": "lerna run test"
   },
   "husky": {
     "hooks": {
