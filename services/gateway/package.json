@@ -29,7 +29,7 @@
     "@apollo/gateway": "^0.11.3",
     "@lazy-graphql/shared": "1.0.1",
     "apollo-server-fastify": "^2.9.12",
-    "fastify": "^2.10.0",
+    "fastify": "^2.15.1",
     "graphql": "^14.5.8"
   },
   "devDependencies": {
